@@ -325,7 +325,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!-- edit modal script  -->
     <script>
     $(document).ready(function() {
-        $('.edit').click(function(){
+       // $('.edit').click(function(){ //only work on first pagination page off DATATABLE Jquery
+            $(document).on('click','.edit',function(){ //working 
             var sNo = $(this)[0].id.substr(4);
             var first_name = $(this)[0].parentNode.parentNode.getElementsByTagName("td")[0].innerText;
             var last_name =  $(this)[0].parentNode.parentNode.getElementsByTagName("td")[1].innerText;
@@ -341,7 +342,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!-- delete modal script      -->
     <script>
     $(document).ready(function() {
-        $('.delete').click(function(){
+        // $('.delete').click(function(){ //only work on first pagination page off DATATABLE Jquery
+            $(document).on('click','.delete',function(){ //working 
             var sNo = $(this)[0].id.substr(6);
             var first_name = $(this)[0].parentNode.parentNode.getElementsByTagName("td")[0].innerText;
             var last_name =  $(this)[0].parentNode.parentNode.getElementsByTagName("td")[1].innerText;
